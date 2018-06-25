@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.ISBN;
 
 @Entity
 public class Book {
@@ -21,18 +23,20 @@ public class Book {
 	@Column(columnDefinition = "BINARY(16)")
 	private UUID id;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Author author;
 
 	@Column(length = 120)
-	@NotEmpty
+	@NotNull(message="is required")
+	@NotEmpty(message="is required")
 	private String name;
 
 	@Column(length = 20, name = "isbn_code")
-	@NotEmpty
+	@NotNull(message="is required")
+	@NotEmpty(message="is required")
+	@ISBN(message="format : 978-161-729-045-9 or 978-0-9767736-6-5")
 	private String isbnCode;
 	
-
 	public Book() {
 	}
 

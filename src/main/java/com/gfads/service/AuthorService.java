@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gfads.dao.AuthorDao;
@@ -18,11 +19,12 @@ import com.gfads.entity.Author;
 @Transactional
 public class AuthorService {
 
+	@Autowired
 	private AuthorDao authorDao;
 
-	public AuthorService(AuthorDao authorDao) {
+	/*public AuthorService(AuthorDao authorDao) {
 		this.authorDao = authorDao;
-	}
+	}*/
 
 	public List<Author> list() {
 		return (List<Author>) authorDao.findAll();

@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Book list</title>
+<title>Add a book</title>
 
 <meta name="viewport" content="width=device-width" />
 <base href="/" />
@@ -18,9 +18,11 @@
 
 <link rel="stylesheet"
 	href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
 </head>
 <body>
-	<%@include file="/WEB-INF/jsp/elements/menu.jsp"%>
+	<%@include file="/WEB-INF/view/elements/menu.jsp"%>
 
 	<div class="container">
 		<div class="row">
@@ -31,7 +33,7 @@
 		<form:form action="processAddBook" method="POST" modelAttribute="book">
 			<div class="row">
 				<div class="form-group">
-					<label class="control-label col-xs-6 col-sm-3 col-md-1">Author</label>
+					<label class="control-label col-xs-6 col-sm-3 col-md-2">Author</label>
 					<div class="col-xs-6 col-sm-3">
 						<form:select path="author" class="form-control" multiple="false">
 							<form:options items="${authors}" />
@@ -42,9 +44,11 @@
 			<div class="row">
 
 				<div class="form-group">
-					<label class="control-label col-xs-6 col-sm-3 col-md-1">Name</label>
+					<label class="control-label col-xs-6 col-sm-3 col-md-2">Name
+						*</label>
 					<div class="col-xs-6 col-sm-3">
-						<form:input path="name" class="form-control" maxlength="120"/>
+						<form:input path="name" class="form-control" maxlength="120" />
+						<form:errors path="name" cssClass="error"></form:errors>
 					</div>
 				</div>
 			</div>
@@ -52,9 +56,11 @@
 			<div class="row">
 
 				<div class="form-group">
-					<label class="control-label col-xs-6 col-sm-3 col-md-1">IsbnCode</label>
+					<label class="control-label col-xs-6 col-sm-3 col-md-2">IsbnCode
+						*</label>
 					<div class="col-xs-6 col-sm-3">
 						<form:input path="isbnCode" class="form-control" />
+						<form:errors path="isbnCode" cssClass="error"></form:errors>
 					</div>
 				</div>
 			</div>

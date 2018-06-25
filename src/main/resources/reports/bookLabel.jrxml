@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="288" pageHeight="432" columnWidth="248" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5230e4a-594a-48d3-a1ba-a3d5a08e5530">
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="bookName" class="java.lang.String"/>
+	<parameter name="authorName" class="java.lang.String"/>
+	<parameter name="isbnCode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="277" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="80" height="30" uuid="b5ed3205-1edf-46b7-8a63-83b74fe680cf"/>
+				<text><![CDATA[Book name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="15" width="170" height="30" uuid="0f28ee51-4431-494f-89ec-435e3f7c76f7"/>
+				<textFieldExpression><![CDATA[$P{bookName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="101" width="80" height="30" uuid="0f713ffd-2caf-45eb-bb5f-2658675a93c5"/>
+				<text><![CDATA[Author name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="100" width="170" height="30" uuid="4d0c17ef-7ba8-484f-b610-1542c9a9c8af"/>
+				<textFieldExpression><![CDATA[$P{authorName}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="180" width="250" height="73" uuid="4585e6be-d055-489a-8bd8-473fc02c2cb8"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Bookland" drawText="true" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{isbnCode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="80" y="160" width="100" height="17" uuid="3a946c55-ed4b-4f2d-819e-f473d100b3ce"/>
+				<textFieldExpression><![CDATA[$P{isbnCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="160" width="100" height="30" uuid="dde6ce43-9970-4111-a087-ca3a906a9a6f"/>
+				<text><![CDATA[ISBN :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
